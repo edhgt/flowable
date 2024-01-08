@@ -54,3 +54,16 @@ services:
       - SPRING_DATASOURCE_URL=jdbc:postgresql://128.5.101.69:5432/flowable
       - SPRING_DATASOURCE_USERNAME=postgres
       - SPRING_DATASOURCE_PASSWORD=abc123
+  flowable-rest:
+    image: flowable/flowable-rest
+    ports:
+      - "8084:8080"
+    environment:
+      - SPRING_DATASOURCE_DRIVER-CLASS-NAME=org.postgresql.Driver
+      - SPRING_DATASOURCE_URL=jdbc:postgresql://128.5.101.69:5432/flowable
+      - SPRING_DATASOURCE_USERNAME=postgres
+      - SPRING_DATASOURCE_PASSWORD=abc123
+      - FLOWABLE_REST_APP_ADMIN_USER-ID=rest-admin
+      - FLOWABLE_REST_APP_ADMIN_PASSWORD=test
+      - FLOWABLE_REST_APP_ADMIN_FIRST-NAME=Rest
+      - FLOWABLE_REST_APP_ADMIN_LAST-NAME=Admin
